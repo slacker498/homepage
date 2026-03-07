@@ -3,6 +3,25 @@
 
 :root {
     --bg-blue: rgb(69, 142, 224);
+
+    color-scheme: light;
+    --bg-color: white;
+    --font-color: black;
+    --about-font-color: rgb(54, 54, 54);
+    --svg-fill: black;
+    --svg-stroke: white;
+    --hover-btns-color: rgba(255, 255, 255, 0.6);
+    
+}
+
+.dark {
+    color-scheme: dark;
+    --bg-color: rgb(48, 46, 46);
+    --font-color: white;
+    --about-font-color: rgb(209, 207, 207);
+    --svg-fill: white;
+    --svg-stroke: black;
+    --hover-btns-color: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -33,8 +52,13 @@ code {
     background-color: rgba(95, 137, 175, 0.5);  
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     position: relative;
+    background-color: var(--bg-color);
 }
 
 main {
@@ -48,17 +72,27 @@ main {
     display: flex;
     flex-direction: column;
     z-index: 1;
+
+    background-color: var(--hover-btns-color);
+    border-radius: 50px;
+    
 }
 
 .hover-btns svg {
     width: 50px;
     padding: 15px;
+    opacity: 0.5;
+}
+
+.hover-btns svg:hover {
+    opacity: 1;
 }
 
 svg {
     cursor: pointer;
-
-    transition-property: transform;
+    fill: var(--svg-fill);
+    stroke: var(--svg-stroke);
+    transition-property: transform, opacity;
     transition-duration: 400ms;
     transition-timing-function: ease-out;
 }
@@ -75,7 +109,7 @@ figcaption {
 }
 
 .about-me {
-    background: linear-gradient(135deg, var(--bg-blue) 60%, white 60%);
+    background: linear-gradient(135deg, var(--bg-blue) 60%, var(--bg-color) 60%);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -89,10 +123,10 @@ figcaption {
 
 .about-me > div {
     display: flex;
-    background-color: white;
+    background-color: var(--bg-color);
     margin: 30px;
     width: 80%;
-    box-shadow: 2px 2px 5px grey;
+    box-shadow: 2px 2px 5px black;
     padding: 20px;
 }
 
@@ -117,7 +151,7 @@ figcaption {
 }
 
 .about-me p {
-    color: rgb(54, 54, 54);
+    color: var(--about-font-color);
 }
 
 .about-me .main-content {
@@ -144,8 +178,9 @@ figcaption {
 
 .my-work ul li {
     list-style-type: none;
-    box-shadow: 2px 2px 5px grey;
+    box-shadow: 2px 2px 5px black;
     cursor: pointer;
+    border-radius: 7px;
 
     transition-property: transform;
     transition-duration: 500ms;
