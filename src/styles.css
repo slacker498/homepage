@@ -84,7 +84,7 @@ figcaption {
 
 .about-me h1,
 .about-me figcaption {
-    font-size: 45px;
+    font-size: 2.2em;
 }
 
 .about-me > div {
@@ -169,7 +169,7 @@ figcaption {
 }
 
 .my-work svg {
-    width: 20px;
+    width: 25px;
 }
 
 .my-work img {
@@ -196,25 +196,85 @@ figcaption {
 
 /* Tablet experience */
 @media screen and (max-width: 800px) {
+    figcaption {
+        transform: translateY(70px) translateX(-30px);
+        color: rgb(82, 81, 81);
+    }
+
+    figure {
+        width: calc(35vw - 20px);
+    }
+
+    .about-me .about-socials {
+        bottom: 5%;
+        left: calc(-60% - 20px);
+    }
+
+    .about-me > div{
+        margin-top: 100px;
+        height: 72vh;
+    }
+
+    .about-me img {
+        height: 50%;
+        transform-origin: right;
+        transform: scale(1.4);
+    }
+
+    .my-work ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .my-work img {
+        width: 42vw;
+    }
     
 }
 
 /* Mobile experience */
 @media screen and (max-width: 500px) {
+    figcaption {
+        transform: translateY(60px) translateX(-40px);
+        color: rgb(83, 83, 83);        
+    }
+
+    figure {
+        transform: translateX(30px);
+    }
+
+    .about-me {
+        height: initial;
+        background: linear-gradient(150deg, var(--bg-blue) 60%, white 60%);
+    }
+
     .about-me img {
         height: auto;
-        width: 100%;
+        width: 50vw;
         transform-origin: initial;
-        transform: scale(1);
+        transform: scale(1.9) translateY(15%);
+
+    }
+
+    .about-me h1 {
+        margin-bottom: 0px;
+        margin-top: 0px;
     }
 
     .about-me > div{
         flex-direction: column;
+        gap: 10em;
+        height: 65em;
+        margin: 0px;
+        margin-top: 20px;
+    }
+
+    .about-me .about-socials {
+        bottom: -15%;
     }
 
     .my-work {
         padding: 5vw;
-    } /* To be changed*/
+    }
 
     .my-work img {
         width: 80vw;
