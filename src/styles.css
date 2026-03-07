@@ -1,3 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+:root {
+    --bg-blue: rgb(69, 142, 224);
+}
+
+* {
+    font-family: "Roboto";
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, 
+h2,
+figcaption {
+    font-family: "Google Sans Flex";
+    width: max-content;
+}
+
+h1:hover {
+    cursor: pointer;
+    border-bottom: 1px solid;
+}
+
+code {
+    font-family: monospace;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(95, 137, 175, 0.5);  
+}
+
 body {
-    background-color: blue;
+    position: relative;
+}
+
+main {
+    display: grid;
+}
+
+.hover-btns {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.hover-btns svg {
+    width: 50px;
+    padding: 15px;
+}
+
+svg {
+    cursor: pointer;
+
+    transition-property: transform;
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
+}
+
+svg:hover {
+    transform: scale(1.1);
+}
+
+/* About me Section */
+
+figcaption {
+    transform: translateY(-20px) translateX(-10px);
+    color: rgb(46, 42, 42);
+}
+
+.about-me {
+    background: linear-gradient(135deg, var(--bg-blue) 60%, white 60%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me h1,
+.about-me figcaption {
+    font-size: 45px;
+}
+
+.about-me > div {
+    display: flex;
+    background-color: white;
+    margin: 30px;
+    width: 80%;
+    box-shadow: 2px 2px 5px grey;
+    padding: 20px;
+}
+
+.about-me .about-socials {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.about-me svg,
+.contact-info svg {
+    width: 30px;
+}
+
+.about-me img {
+    height: 50vh;
+    transform-origin: right 120px;
+    transform: scale(1.5);
+    box-shadow: 2px 2px 5px black;
+}
+
+.about-me p {
+    color: rgb(54, 54, 54);
+}
+
+.about-me .main-content {
+    position: relative;
+}
+
+
+/* Projects Section */
+.my-work * {
+    padding: 0;
+    margin: 0;
+}
+
+.my-work {
+    padding: 30px;
+}
+
+.my-work ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5vw;
+    margin-top: 30px;
+}
+
+.my-work ul li {
+    list-style-type: none;
+    box-shadow: 2px 2px 5px grey;
+    cursor: pointer;
+
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.my-work ul li:hover {
+    transform: scale(1.01) translateY(-5px);
+    
+}
+
+.my-work ul li > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-work ul li > div div,
+.my-work ul li > div p{
+    margin: 10px 10px;
+}
+
+.my-work svg {
+    width: 20px;
+}
+
+.my-work img {
+    width: 27vw;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+/* Contact Info Section */
+.contact-info {
+    background-color: var(--bg-blue);
+    color: white;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.contact-info img {
+    width: 60vw;
+}
+
+/* Tablet experience */
+@media screen and (max-width: 800px) {
+    
+}
+
+/* Mobile experience */
+@media screen and (max-width: 500px) {
+    .about-me img {
+        height: auto;
+        width: 100%;
+        transform-origin: initial;
+        transform: scale(1);
+    }
+
+    .about-me > div{
+        flex-direction: column;
+    }
+
+    .my-work {
+        padding: 5vw;
+    } /* To be changed*/
+
+    .my-work img {
+        width: 80vw;
+    }
+
+    .my-work ul {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .contact-info .main-contacts {
+        padding: 20px;
+    }
+
+    .contact-info img {
+        width: 100%;
+    }
 }
